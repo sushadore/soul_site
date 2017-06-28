@@ -22,8 +22,28 @@ class SingersController < ApplicationController
     end
   end
 
+  def edit
+    @singer = Singer.find(params[:id])
+  end
+
+  def update
+    @singer = Singer.find(params[:id])
+    if @singer.update(singer_params)
+      flash[:notice] = "Singer successfully updated!"
+      redirect_to singer_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @singer = Singer.find(params[:id])
+    @singer.destroy
+    redirect_to singers_path
+  end
+
   private
   def singer_params
-    params.require(:singer).permit(:name)
+    params.require(:singer).permit(:name, :image)
   end
 end

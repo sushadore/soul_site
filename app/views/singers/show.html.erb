@@ -19,3 +19,7 @@
 <% end %>
 
 <p><%= link_to "Add a album", new_singer_album_path(@singer) %></p>
+<%= link_to "Edit", edit_singer_path(@singer) %> |
+<%= link_to "Delete", singer_path(@singer),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %>
