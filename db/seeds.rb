@@ -7,7 +7,7 @@ Album.destroy_all
                   image: "http://lorempixel.com/400/200/")
     3.times do |index|
       singer.albums.create(title: Faker::Superhero.unique.name,
-                    year: Faker::Number.number(4))
+                    year: 1961)
     end
 end
 

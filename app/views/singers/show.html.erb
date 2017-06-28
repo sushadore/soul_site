@@ -5,8 +5,8 @@
   <ul>
     <% @singer.albums.each do |album| %>
       <li>
-        <%= album.title %>
-        <%= album.year %>
+        <%= album.title %>,
+        <%= album.year %><br>
         <%= link_to "Edit", edit_singer_album_path(@singer, album) %> |
         <%= link_to "Delete", singer_album_path(@singer, album),
                                  :data => {:confirm => "You sure?",
