@@ -1,0 +1,21 @@
+<h3><%= @singer.name %></h3>
+
+<% if @singer.albums.any? %>
+
+  <ul>
+    <% @singer.albums.each do |album| %>
+      <li>
+        <%= album.title %>
+        <%= album.year %>
+        <%= link_to "Edit", edit_singer_album_path(@singer, album) %> |
+        <%= link_to "Delete", singer_album_path(@singer, album),
+                                 :data => {:confirm => "You sure?",
+                                           :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no albums yet!</p>
+<% end %>
+
+<p><%= link_to "Add a album", new_singer_album_path(@singer) %></p>
