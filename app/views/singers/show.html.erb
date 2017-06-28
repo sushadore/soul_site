@@ -3,7 +3,7 @@
 <% if @singer.albums.any? %>
 
   <ul>
-    <% @singer.albums.each do |album| %>
+    <% @singer.albums.most_recent.each do |album| %>
       <li>
         <%= album.title %>,
         <%= album.year %><br>
