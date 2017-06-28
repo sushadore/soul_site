@@ -22,4 +22,8 @@ class SingersController < ApplicationController
     end
   end
 
+  private
+  def singer_params
+    params.require(:singer).permit(:name)
+  end
 end
