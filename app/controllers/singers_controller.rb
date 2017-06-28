@@ -1,7 +1,7 @@
 class SingersController < ApplicationController
 
   def index
-    @singers = Singer.all
+    @singers = Singer.all.alphabetize
   end
 
   def show
